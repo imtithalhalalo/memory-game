@@ -6,8 +6,6 @@ let num = 0
 //check if they match
 const match = () => {
     if (first_card.dataset.framework == second_card.dataset.framework) {
-        first_card.removeEventListener('click', flip);
-        second_card.removeEventListener('click', flip);
         num += 1
         score.innerText = `Your score is: ${num}`
         setTimeout(() => {
@@ -21,15 +19,16 @@ const match = () => {
         }, 1000);
     }
 }
-cards.forEach(card => card.addEventListener('click', flip = () => {
-    card.classList.add('flip')
-    if (!flipped) {
-        flipped = true;
-        first_card = card;
-    } else {
-        flipped = false;
-        second_card = card;
-        match()
-    }
+cards.forEach(
+    card => card.addEventListener('click', flip = () => {
+        card.classList.add('flip')
+        if (!flipped) {
+            flipped = true;
+            first_card = card;
+        } else {
+            flipped = false;
+            second_card = card;
+            match()
+        }
 }))
 
