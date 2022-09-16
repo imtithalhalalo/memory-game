@@ -28,6 +28,7 @@ h1 {
   width: 600px;
   height: 600px;
   margin: auto;
+  perspective: 1000px;
 }
 
 .memory-card {
@@ -35,8 +36,12 @@ h1 {
   height: 33.33%;
   position: relative;
   border: 1px solid #fff;
+  transform-style: preserve-3d;
+  transition: 0.3s;
 }
-
+.flip {
+    transform: rotateY(180deg);
+}
 .front,
 .back {
   width: 100%;
@@ -45,4 +50,8 @@ h1 {
   border-radius: 15px;
   background-color: rgb(202, 202, 202);
   padding: 20px;
+  backface-visibility: hidden;
+}
+.front {
+    transform: rotateY(180deg);
 }
