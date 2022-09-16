@@ -10,6 +10,10 @@ const match = () => {
         second_card.removeEventListener('click', flip);
         num += 1
         score.innerText = `Your score is: ${num}`
+        setTimeout(() => {
+            first_card.classList.add('display-none');
+            second_card.classList.add('display-none');
+        }, 1000);
     } else {
         setTimeout(() => {
             first_card.classList.remove('flip');
